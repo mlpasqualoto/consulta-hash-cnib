@@ -21,7 +21,6 @@ Este é um projeto desenvolvido com Electron e Express que permite a consulta de
 - **Electron**: Interface desktop.
 - **Node.js & Express**: Backend e API.
 - **Fetch API**: Requisições HTTP.
-- **MongoDB (se aplicável)**: Armazenamento de dados.
 - **HTML, CSS e JavaScript**: Interface do usuário.
 
 ## 📂 Estrutura do Projeto
