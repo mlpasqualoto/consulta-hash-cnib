@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node": "^20.18.3",
+    "node-fetch": "^3.3.2"
+  },
+  "name": "consulta-hash",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "electron": "^34.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

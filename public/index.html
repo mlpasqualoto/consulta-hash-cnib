@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title> - Consulta HASH - </title>
+</head>
+<body>
+    <div id="totalScreen">
+        <header></header>
+
+        <div id="mainScreen">
+            <div id="topScreen">
+                <div id="loginBox">
+                    <button id="loginBtn">Login</button>
+                </div>
+            </div>
+            <div id="botScreen">
+                <div id="searchContainer">
+                    <div id="searchBox">
+                        <form action="">
+                            <label for="number">CPF do Usuário</label>
+                            <input type="number" id="cpfUser" name="cpf" placeholder="Digite o CPF do Usuário">
+                            <label for="number">CPF ou CNPJ para consulta</label>
+                            <input type="number" id="cpfSearch" name="cpf" placeholder="Digite o CPF ou CNPJ para consulta">
+                            <button id="submitBtn" type="submit">Search</button>
+                        </form>
+                        <div id="resultBox">
+                            <p id="resultName"></p>
+                            <p id="result"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Div de Loading -->
+    <div id="loading" style="display: none;">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>
