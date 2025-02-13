@@ -4,7 +4,11 @@
 
 Este é um projeto desenvolvido com Electron e Express que permite a consulta de hashes por meio da nova API 2.0 da CNIB. O backend realiza autenticação via OAuth2, obtendo um token de acesso para interagir com a API externa da ONR. O frontend, construído com HTML, CSS e JavaScript, permite a entrada de dados do usuário e exibe os resultados da consulta.
 
-## 🚀 Funcionalidades
+## 📸 Capturas de Tela
+
+![image](https://github.com/user-attachments/assets/4948ac54-1fa8-4302-adc3-064da2756357)
+
+## ✨ Funcionalidades
 
 - Interface desktop com Electron.
 - Servidor backend com Express para autenticação e consulta de dados.
@@ -72,16 +76,12 @@ Inicie o aplicativo Electron:
 npm start
 ```
 
-## 🛠️ Como Usar
+## 🚀 Como Usar
 
 1. Abra o aplicativo e clique em **Login** para obter um token de autenticação.
 2. Insira os dados necessários na interface.
 3. Clique em **Search** para consultar os hashes.
 4. Caso o token expire, uma mensagem de alerta será exibida para realizar novo login.
-
-## 📸 Capturas de Tela
-
-(Adicione imagens da interface se desejar)
 
 ## 📄 Licença
 
