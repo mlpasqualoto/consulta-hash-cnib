@@ -1,10 +1,10 @@
-# Consulta de Hash - Electron + Express API
+# Consulta de Hash Indisponibilidade de Bens - CNIB
 
-## Descrição
+## 📌 Descrição
 
-Este é um projeto desenvolvido com Electron e Express que permite a consulta de hashes por meio de uma API. O backend realiza autenticação via OAuth2, obtendo um token de acesso para interagir com a API externa da ONR. O frontend, construído com HTML, CSS e JavaScript, permite a entrada de dados do usuário e exibe os resultados da consulta.
+Este é um projeto desenvolvido com Electron e Express que permite a consulta de hashes por meio da nova API 2.0 da CNIB. O backend realiza autenticação via OAuth2, obtendo um token de acesso para interagir com a API externa da ONR. O frontend, construído com HTML, CSS e JavaScript, permite a entrada de dados do usuário e exibe os resultados da consulta.
 
-## Funcionalidades
+## 🚀 Funcionalidades
 
 - Interface desktop com Electron.
 - Servidor backend com Express para autenticação e consulta de dados.
@@ -12,7 +12,7 @@ Este é um projeto desenvolvido com Electron e Express que permite a consulta de
 - Consulta de hashes de documentos.
 - Aviso de expiração do token de autenticação.
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - **Electron**: Interface desktop.
 - **Node.js & Express**: Backend e API.
@@ -20,7 +20,7 @@ Este é um projeto desenvolvido com Electron e Express que permite a consulta de
 - **MongoDB (se aplicável)**: Armazenamento de dados.
 - **HTML, CSS e JavaScript**: Interface do usuário.
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```
 projeto/
@@ -43,7 +43,7 @@ projeto/
 │── .env  # Variáveis de ambiente (CLIENT_ID, CLIENT_SECRET)
 ```
 
-## Instalação e Execução
+## ⚙️ Instalação e Execução
 
 Clone o repositório:
 
@@ -72,40 +72,17 @@ Inicie o aplicativo Electron:
 npm start
 ```
 
-## Como Usar
+## 🛠️ Como Usar
 
 1. Abra o aplicativo e clique em **Login** para obter um token de autenticação.
 2. Insira os dados necessários na interface.
 3. Clique em **Search** para consultar os hashes.
 4. Caso o token expire, uma mensagem de alerta será exibida para realizar novo login.
 
-## Capturas de Tela
+## 📸 Capturas de Tela
 
 (Adicione imagens da interface se desejar)
 
-## Contribuição
-
-1. Fork este repositório.
-2. Crie um branch com sua funcionalidade:
-
-   ```sh
-   git checkout -b minha-funcionalidade
-   ```
-
-3. Commit suas modificações:
-
-   ```sh
-   git commit -m 'Adiciona nova funcionalidade'
-   ```
-
-4. Envie para o branch principal:
-
-   ```sh
-   git push origin minha-funcionalidade
-   ```
-
-5. Abra um **Pull Request**.
-
-## Licença
+## 📄 Licença
 
 Este projeto está sob a licença **MIT**. Para mais detalhes, consulte o arquivo `LICENSE`.
