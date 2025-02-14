@@ -4,10 +4,12 @@ const loginBtn = document.getElementById("loginBtn");
 const submitBtn = document.getElementById("submitBtn");
 const loading = document.getElementById("loading");
 const searchContainer = document.getElementById("searchContainer");
+const errorMessage = document.getElementById("errorMessage");
 
 // Evento de click para obter o token
 let tokenExpirationTime = ""; // Armazenará o tempo de expiração do token
 let token = "";
+let intervalID = "";
 loginBtn.addEventListener("click", async () => {
     loading.style.display = "flex"; // Exibe o loading
 
@@ -29,6 +31,14 @@ loginBtn.addEventListener("click", async () => {
     loading.style.display = "none"; // Oculta o loading
 
     searchContainer.style.display = "flex"; // Exibe o formulário de busca    
+
+    // Inicia a verificação periódica do token somente após o login
+    intervalID = setInterval(() => {
+        const tokenCheck = checkTokenExpiration();
+        if (tokenCheck.expired) {
+            clearInterval(intervalID); // Para o intervalo quando o token expirar
+        }
+    }, 1000);
 });
 
 // Evento de click para buscar o hash
@@ -38,8 +48,17 @@ let nome = "";
 submitBtn.addEventListener("click", async (event) => {
     event.preventDefault(); // Impede o envio do formulário
 
-    const cpfUsuario = document.getElementById("cpfUser").value.trim();
-    const documento = document.getElementById("cpfSearch").value.trim();
+    // Obtém o CPF do usuário e o documento e remove caracteres não numéricos
+    let cpfUsuario = document.getElementById("cpfUser").value.trim().replace(/\D/g, "");
+    let documento = document.getElementById("cpfSearch").value.trim().replace(/\D/g, "");
+
+    // Verifica se os campos estão preenchidos
+    if (!cpfUsuario || !documento) {
+        errorMessage.textContent = "Por favor, preencha todos os campos!";
+        errorMessage.style.display = "flex";
+        return;
+    }
+    errorMessage.style.display = "none"; // Oculta a mensagem de erro
 
     loading.style.display = "flex"; // Exibe o loading
     
@@ -110,7 +129,6 @@ const checkTokenExpiration = () => {
 
     const currentTime = Date.now();
     const timeRemaining = tokenExpirationTime - currentTime;
-    console.log("Tempo restante:", timeRemaining);
 
     if (timeRemaining <= 0) {
         searchContainer.style.display = "none"; // Esconde quando expirar
@@ -121,8 +139,3 @@ const checkTokenExpiration = () => {
         return { expired: false, message: "Token válido." };
     }
 };
-
-// Adicione verificação periódica (a cada 1 segundo)
-setInterval(() => {
-    checkTokenExpiration();
-}, 1000);

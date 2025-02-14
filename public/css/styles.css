@@ -37,7 +37,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20%;
+    height: 10%;
     width: 100%;
     background-color: #ffffff;
     border-radius: 8px;
@@ -100,6 +100,12 @@ header {
     width: 100%;
     height: 100%;
     gap: 25px;
+}
+
+#errorMessage {
+    display: none;
+    color: #ff0000;
+    margin: 0;
 }
 
 form {
@@ -176,6 +182,20 @@ input:focus {
 
 #expirationWarning button {
     cursor: pointer;
+    padding: 12px 40px;
+    cursor: pointer;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#expirationWarning button:hover {
+    background-color: #1557b0;
+    transform: translateY(-2px);
 }
 
 /* Loader */
