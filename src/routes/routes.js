@@ -90,8 +90,16 @@ const routes = (app) => {
 
             const data = await response.json();
 
+            // Verifica se o documento é indisponível
+            let indisp = "";
+            if (data.data.indisponivel) {
+                indisp = "Positivo";
+            } else {
+                indisp = "Negativo";
+            }
+
             console.log(data);
-            res.status(200).json({ success: true, message: 'Consulta realizada com sucesso', indisponivel: data.data.indisponivel, hash: data.data.dados_usuario.hash, nome: data.data.nomeRazao });
+            res.status(200).json({ success: true, message: 'Consulta realizada com sucesso', indisponivel: indisp, hash: data.data.dados_usuario.hash, nome: data.data.nomeRazao });
 
         } catch (error) {
             console.log("Erro na API da Indisponibilidade", error);

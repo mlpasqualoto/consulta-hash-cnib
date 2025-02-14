@@ -80,8 +80,11 @@ submitBtn.addEventListener("click", async (event) => {
     const resultName = document.getElementById("resultName");
     resultName.textContent = `Nome: ${nome}`;
 
-    const result = document.getElementById("result");
-    result.textContent = `Hash: ${hash} / Indisponível: ${indisponivel}`;
+    const resultHash = document.getElementById("resultHash");
+    resultHash.textContent = `Hash: ${hash}`;
+
+    const resultIndisp = document.getElementById("resultIndisp");
+    resultIndisp.textContent = `Indisponível: ${indisponivel}`;
 });
 
 // Cria uma caixa de aviso para expiração do token
