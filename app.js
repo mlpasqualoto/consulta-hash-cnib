@@ -9,7 +9,7 @@ import './src/server.js' // Inicia o servidor
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 1280,
+        width: 1080,
         height: 900,
         webPreferences: {
         // Habilita a integração com Node.js se necessário
