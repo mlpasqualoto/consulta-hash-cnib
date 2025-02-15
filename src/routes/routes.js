@@ -93,9 +93,9 @@ const routes = (app) => {
             // Verifica se o documento é indisponível
             let indisp = "";
             if (data.data.indisponivel) {
-                indisp = "Positivo";
+                indisp = "Positiva";
             } else {
-                indisp = "Negativo";
+                indisp = "Negativa";
             }
 
             console.log(data);

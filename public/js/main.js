@@ -1,6 +1,7 @@
 import reqApi from '../../src/controllers/controllers.js';
 
 const loginBtn = document.getElementById("loginBtn");
+const topScreen = document.getElementById("topScreen");
 const submitBtn = document.getElementById("submitBtn");
 const loading = document.getElementById("loading");
 const searchContainer = document.getElementById("searchContainer");
@@ -11,6 +12,9 @@ let tokenExpirationTime = ""; // Armazenará o tempo de expiração do token
 let token = "";
 let intervalID = "";
 loginBtn.addEventListener("click", async () => {
+    topScreen.style.display = "none"; // Oculta o botão de login
+
+    // Inicia o loading e faz a requisição do token
     loading.style.display = "flex"; // Exibe o loading
 
     try {
@@ -30,7 +34,8 @@ loginBtn.addEventListener("click", async () => {
 
     loading.style.display = "none"; // Oculta o loading
 
-    searchContainer.style.display = "flex"; // Exibe o formulário de busca    
+    // Exibe o formulário de busca  
+    searchContainer.style.display = "flex";
 
     // Inicia a verificação periódica do token somente após o login
     intervalID = setInterval(() => {
@@ -60,6 +65,7 @@ submitBtn.addEventListener("click", async (event) => {
     }
     errorMessage.style.display = "none"; // Oculta a mensagem de erro
 
+    // Inicia o loading e faz a requisição do hash
     loading.style.display = "flex"; // Exibe o loading
     
     try {
@@ -78,13 +84,20 @@ submitBtn.addEventListener("click", async (event) => {
 
     // Exibe o resultado
     const resultName = document.getElementById("resultName");
-    resultName.textContent = `Nome: ${nome}`;
-
     const resultHash = document.getElementById("resultHash");
-    resultHash.textContent = `Hash: ${hash}`;
-
     const resultIndisp = document.getElementById("resultIndisp");
-    resultIndisp.textContent = `Indisponível: ${indisponivel}`;
+
+    if (indisponivel === "Positivo") {
+        resultIndisp.style.color = "red";
+        resultName.style.color = "red";
+    } else {
+        resultIndisp.style.color = "green";
+        resultName.style.color = "green";
+    }
+    
+    resultName.textContent = `${nome}`;
+    resultHash.textContent = `Hash: ${hash}`;
+    resultIndisp.textContent = `Indisponibilidade ${indisponivel}`;
 });
 
 // Cria uma caixa de aviso para expiração do token
