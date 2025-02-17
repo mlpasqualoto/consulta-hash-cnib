@@ -23,9 +23,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",  
+  "description": "",
   "build": {
-    "asar": false,
+    "asar": true,
+    "extraFiles": [
+      ".env"
+    ],
     "appId": "com.seuapp.id",
     "productName": "Consulta Hash",
     "copyright": "© 2025 Matheus",
