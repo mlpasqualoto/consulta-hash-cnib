@@ -1,25 +1,30 @@
+// main.js (ou outro nome que você use como "entry point")
 import { app, BrowserWindow } from 'electron';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
+// Converte import.meta.url em caminho de arquivo
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// Em seguida, obtemos o diretório
+const __dirnameCustom = dirname(__filename);
 
-import './src/server.js' // Inicia o servidor
+// Inicia o servidor
+import './src/server.js';
 
 function createWindow() {
     const win = new BrowserWindow({
         width: 1080,
         height: 900,
         webPreferences: {
-        // Habilita a integração com Node.js se necessário
-        nodeIntegration: true,
-        contextIsolation: false
+            // Habilita a integração com Node.js, se necessário
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true
         }
     });
 
-    // Carrega o arquivo HTML do frontend
-    win.loadFile(`${__dirname}/public/index.html`);
+    // Carrega o arquivo HTML do frontend (use join para compatibilidade de caminhos)
+    win.loadFile(join(__dirnameCustom, 'public', 'index.html'));
 }
 
 // Cria a janela quando o aplicativo estiver pronto
@@ -35,6 +40,6 @@ app.whenReady().then(() => {
 // Fecha a aplicação quando todas as janelas forem fechadas (exceto no macOS)
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit();
+    app.quit();
     }
 });
