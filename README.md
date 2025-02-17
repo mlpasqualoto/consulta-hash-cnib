@@ -75,6 +75,12 @@ Inicie o aplicativo Electron:
 npm start
 ```
 
+Ou empacote os arquivos e crie um instalador com Electron-Builder:
+
+```sh
+npm run dist
+```
+
 ## 🚀 Como Usar
 
 1. Abra o aplicativo e clique em **Login** para obter um token de autenticação.
