@@ -29,7 +29,7 @@
     "extraFiles": [
       ".env"
     ],
-    "appId": "com.seuapp.id",
+    "appId": "com.consultaHash.id",
     "productName": "Consulta Hash",
     "copyright": "© 2025 Matheus",
     "directories": {
