@@ -87,7 +87,7 @@ submitBtn.addEventListener("click", async (event) => {
     const resultHash = document.getElementById("resultHash");
     const resultIndisp = document.getElementById("resultIndisp");
 
-    if (indisponivel === "Positivo") {
+    if (indisponivel === "Positiva") {
         resultIndisp.style.color = "red";
         resultName.style.color = "red";
     } else {
